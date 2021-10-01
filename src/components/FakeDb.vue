@@ -1,0 +1,95 @@
+<template>
+  <div class="list">
+    <ol>
+      <li class="" v-for="item in fakeDbList" :key="item.id">
+        <a href="">{{ item.title }}</a>
+      </li>
+    </ol>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "FakeDb",
+  data() {
+    return {
+      fakeDbList: [],
+      fakeDbData: {},
+    };
+  },
+  mounted() {
+    this.getFakeDbData(0);
+  },
+  methods: {
+    getFakeDbData: function (typeNo) {
+      let fakeDbType = ["posts", "comments", "profile", "db"];
+      let url = "https://my-json-server.typicode.com/gray-kim/fake_db/";
+      let queryParams = fakeDbType[typeNo];
+
+      console.log(url + queryParams);
+
+      this.axios.get(url + queryParams).then((result) => {
+        console.log(result.data);
+        if (result.data.length > 0) {
+          if (typeNo == 0 || typeNo == 1) {
+            this.fakeDbList = result.data;
+          } else {
+            this.fakeDbData = result.data;
+          }
+        }
+      });
+    },
+  },
+};
+</script>
+
+<style scoped>
+ol {
+  counter-reset: li;
+  list-style: none;
+  padding: 0 300px 0 300px;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+ol a {
+  position: relative;
+  display: block;
+  padding: .4em .4em .4em .8em;
+  margin: .5em 0 .5em 2.5em;
+  background: #D3D4DA;
+  color: #444;
+  text-decoration: none;
+  transition: all .3s ease-out;
+}
+
+ol a:hover {background: #DCDDE1;}
+ol a:before {
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  left: -2.5em;
+  top: 50%;
+  margin-top: -1em;
+  background: #f9dd94;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  text-align: center;
+  font-weight: bold;
+}
+
+ol a:after {
+  position: absolute;
+  content: "";
+  border: .5em solid transparent;
+  left: -1em;
+  top: 50%;
+  margin-top: -.5em;
+  transition: all .3s ease-out;
+}
+
+ol a:hover:after {
+  left: -.5em;
+  border-left-color: #f9dd94;
+}
+</style>
