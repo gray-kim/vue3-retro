@@ -6,7 +6,7 @@
     <label for="" class="input-label">Content</label>
     <textarea class="input-text" id="contents" rows="4"/>
     <br/>
-    <button class="button-4" role="button">Submit</button>
+    <button class="button-4" role="button" @click="postFakeDbData">Submit</button>
   </div>
   <div class="list">
     <ol>
