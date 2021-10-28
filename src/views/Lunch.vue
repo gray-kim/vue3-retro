@@ -46,6 +46,7 @@ export default {
               {name: "떡볶이", price: "3000 원", img: "http://sinjeon.co.kr/img/sub/menu03_dduk1.png"}
               ,{name: "로제떡볶이", price: "5000 원", img: "http://sinjeon.co.kr/img/sub/menu03_dduk3.png"}
               ,{name: "오뎅튀김(6개)", price: "1500 원", img: "http://sinjeon.co.kr/img/sub/menu03_dduk3.png"}
+              ,{name: "신전치즈김밥", price: "3500 원", img: "http://sinjeon.co.kr/img/sub/menu01/menu21.png"}
           ]
         }
         ,{
@@ -53,6 +54,13 @@ export default {
           menu: [
             {name: "순대국", price: "6000 원", img: "http://www.bkfood.kr/renew/image/menu/main_mu4.jpg"}
             ,{name: "수육국밥", price: "7000 원", img: "http://www.bkfood.kr/renew/image/menu/main_mu17.jpg"}
+          ]
+        }
+        ,{
+          name: "바삭파삭",
+          menu: [
+            {name: "새우텐동", price: "7000 원", img: "https://modo-phinf.pstatic.net/20200219_156/1582087008907NLytt_JPEG/mosagUVGR3.jpeg?type=f353_235"}
+            ,{name: "가끼아게텐동", price: "9000 원", img: "https://modo-phinf.pstatic.net/20200219_82/1582087212777wKqHN_JPEG/mosaqEYARq.jpeg?type=f353_235"}
           ]
         }
       ];
